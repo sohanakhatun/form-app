@@ -7,7 +7,6 @@ A custom Shopify embedded app built with React Router that allows customers to s
 ### 1. Customer-Facing Forms
 - **Embedded App Form**: Form accessible within the Shopify admin app
 - **Storefront Form - App Block**: Drag-and-drop form block for Theme Customizer (no code required!) ⭐
-- **Storefront Form - Embed Script**: Form that can be embedded via script tag
 - Simple form with three fields:
   - Name
   - Email
@@ -41,7 +40,7 @@ A custom Shopify embedded app built with React Router that allows customers to s
 - **Frontend**: React, React Router v7
 - **Backend**: Node.js, React Router (server-side)
 - **Database**: SQLite with Prisma ORM
-- **Shopify**: Shopify App Bridge, Shopify CLI
+- **Shopify**:  Shopify CLI
 - **Styling**: Inline styles (can be upgraded to Polaris Web Components)
 
 ## Prerequisites
@@ -93,7 +92,7 @@ This will create:
 
 ### 4. Environment Variables Setup
 
-#### Option A: Automatic Setup with Shopify CLI (Recommended)
+#### Automatic Setup with Shopify CLI (Recommended)
 
 When you run `shopify app dev`, the Shopify CLI automatically:
 - Creates or connects to an app in your Partner Dashboard
@@ -102,32 +101,6 @@ When you run `shopify app dev`, the Shopify CLI automatically:
 - Handles all configuration
 
 **You don't need to manually create a `.env` file when using this method.**
-
-#### Option B: Manual Environment Variable Setup
-
-If you need to run the app without Shopify CLI or want to configure manually:
-
-1. **Create a `.env` file** in the root directory 
-
-2. **Add the following environment variables:**
-
-```env
-# Shopify App Credentials
-SHOPIFY_API_KEY=your_api_key_here
-SHOPIFY_API_SECRET=your_api_secret_key_here
-SHOPIFY_APP_URL=https://your-app-url.com
-SCOPES=write_products
-
-# Database (SQLite - default for development)
-DATABASE_URL="file:./prisma/dev.sqlite"
-
-# Node Environment
-NODE_ENV=development
-
-# Optional: Custom shop domain (if needed)
-# SHOP_CUSTOM_DOMAIN=your-custom-domain.com
-```
-you can get the details by using the command ```shopify app env show```
 
 ### 6. How to Run the App (Development Mode with Shopify CLI)
 
@@ -147,7 +120,7 @@ shopify app dev
 
 **What happens when you run this:**
 
-1. **Development server starts** on a local port (typically 3000)
+1. **Development server starts** on a local port 
 2. **Tunnel is created** automatically (using Cloudflare Tunnel)
 3. **App URL is displayed** in the terminal 
 4. **You'll be prompted** to:
@@ -160,15 +133,9 @@ shopify app dev
 - Press `P` to open the app URL in your browser
 - Press `R` to restart the development server
 - Press `Q` to quit
+- Press `A` to view app details
 
-**Getting Your App URL**: When you run `npm run dev`, the Shopify CLI automatically creates a tunnel and displays your app URL in the terminal output. Look for a line that says:
-```
-✔ App URL: https://abc123.ngrok.io
-```
-or
-```
-Your app is running at: https://abc123.ngrok.io
-```
+**Getting Your App URL**: When you run `npm run dev`, the Shopify CLI automatically creates a tunnel and displays your app URL in the terminal output. Press `A` to get the app URL.
 
 ### 7. Install the App on Your Development Store
 
@@ -202,6 +169,12 @@ form-builder-app/
 ├── prisma/
 │   ├── schema.prisma                # Database schema
 │   └── dev.sqlite                   # SQLite database file
+├── extensions/
+│   ├── form-block/
+│   │   ├── assets/                  # assets
+│   │   ├── block/                   # App Block UI Components
+│   │   │    ├── contact-form.liquid   # Contact Form
+│   │   ├── locales/                 # Localization files.
 ├── public/                          # Static assets
 ├── package.json
 ├── shopify.app.toml                 # Shopify app configuration
