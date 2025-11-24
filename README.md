@@ -18,12 +18,16 @@ A custom Shopify embedded app built with React Router that allows customers to s
 - Automatic shop domain tracking for storefront submissions
 - Fully customizable through Theme Customizer settings
 
+  <img width="962" height="733" alt="image" src="https://github.com/user-attachments/assets/0883576f-9ae0-4d3e-bcfa-28b22feb39bc" />
+
 ### 2. Admin Dashboard
 - View all form submissions in a table format
 - Columns: Name, Email, Phone Number, Shop (if from storefront), Submission Date
 - Sorted by most recent submissions first
 - Accessible only to authenticated merchants
 - Shows submissions from both embedded app and storefront
+
+  <img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/56765e5b-b6c4-4597-a3f4-f243af0996fc" />
 
 ### 3. Backend API
 - **POST `/api/submit`**: Handle form submissions from embedded app
