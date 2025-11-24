@@ -59,11 +59,9 @@ Before you begin, ensure you have the following installed:
 Clone the repository to your local machine:
 
 ```bash
-git clone <your-repo-url>
-cd "Shopify Assignment/form-builder-app"
+git clone https://github.com/sohanakhatun/form-app.git
+cd "form-builder-app"
 ```
-
-**Note**: Replace `<your-repo-url>` with the actual repository URL. If you're working with a local copy, navigate directly to the project directory.
 
 ### 2. Install Dependencies
 
@@ -105,7 +103,7 @@ When you run `shopify app dev`, the Shopify CLI automatically:
 
 If you need to run the app without Shopify CLI or want to configure manually:
 
-1. **Create a `.env` file** in the root directory (`form-builder-app/.env`)
+1. **Create a `.env` file** in the root directory 
 
 2. **Add the following environment variables:**
 
