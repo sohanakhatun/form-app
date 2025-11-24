@@ -1,0 +1,18 @@
+{
+  "contact_form": {
+    "name": "Contact Form",
+    "heading": "Contact Us",
+    "description": "Fill out the form below and we'll get back to you soon!",
+    "name_label": "Name",
+    "name_placeholder": "Enter your name",
+    "email_label": "Email",
+    "email_placeholder": "Enter your email",
+    "phone_label": "Phone Number",
+    "phone_placeholder": "Enter your phone number",
+    "button_text": "Submit",
+    "submitting_text": "Submitting...",
+    "success_message": "✓ Thank you! Your form has been submitted successfully.",
+    "error_message": "An error occurred. Please try again later."
+  }
+}
+

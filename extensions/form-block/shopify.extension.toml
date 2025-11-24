@@ -1,0 +1,12 @@
+# Learn more about configuring your theme app extension at https://shopify.dev/docs/apps/online-store/theme-app-extensions
+
+name = "form-builder"
+
+uid = "b959cbf0-bdb7-d6f1-99c6-1b3d1a7143d45c1cdde8"
+
+type = "theme_app_extension"
+
+[build]
+command = ""
+watch = []
+
