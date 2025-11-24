@@ -127,64 +127,7 @@ NODE_ENV=development
 # Optional: Custom shop domain (if needed)
 # SHOP_CUSTOM_DOMAIN=your-custom-domain.com
 ```
-
-### 5. Shopify App Configuration & API Keys
-
-#### Getting API Keys from Shopify Partner Dashboard
-
-1. **Log in to [Shopify Partner Dashboard](https://partners.shopify.com/)**
-
-2. **Create a new app** (or use an existing one):
-   - Click "Apps" in the left sidebar
-   - Click "Create app"
-   - Choose "Create app manually"
-   - Enter app name (e.g., "Form Builder App")
-   - Click "Create app"
-
-3. **Get your API credentials**:
-   - In your app's page, go to "App setup" tab
-   - Scroll to "Client credentials"
-   - Copy the **API key** and **API secret key**
-   - Add these to your `.env` file:
-     ```env
-     SHOPIFY_API_KEY=your_copied_api_key
-     SHOPIFY_API_SECRET=your_copied_api_secret
-     ```
-
-4. **Configure App URL and Redirect URLs**:
-   - **App URL**: Set to your app's public URL (e.g., `https://your-ngrok-url.ngrok.io` for development)
-   - **Allowed redirection URL(s)**: Add your auth callback URLs:
-     - `https://your-app-url.com/auth/callback`
-     - `https://your-app-url.com/auth/shopify/callback`
-     - `https://your-app-url.com/api/auth/callback`
-
-5. **Set App Scopes**:
-   - In the "Configuration" section, add required scopes
-   - For this app, you need: `write_products`
-   - This can also be set in `shopify.app.toml` under `[access_scopes]`
-
-#### Using `shopify.app.toml` Configuration
-
-The `shopify.app.toml` file contains your app configuration. Key settings:
-
-```toml
-client_id = "your_client_id"  # Automatically set by Shopify CLI
-name = "form-builder-app"
-application_url = "https://your-app-url.com"
-embedded = true
-
-[access_scopes]
-scopes = "write_products"
-
-[auth]
-redirect_urls = [
-    "https://your-app-url.com/auth/callback",
-    "https://your-app-url.com/auth/shopify/callback",
-    "https://your-app-url.com/api/auth/callback"
-]
-```
-
-**Note**: The `client_id` is automatically populated when you use Shopify CLI. For manual setup, you can find it in your Partner Dashboard under "App setup" → "Client credentials".
+you can get the details by using the command ```shopify app env show```
 
 ### 6. How to Run the App (Development Mode with Shopify CLI)
 
@@ -205,8 +148,8 @@ shopify app dev
 **What happens when you run this:**
 
 1. **Development server starts** on a local port (typically 3000)
-2. **Tunnel is created** automatically (using Cloudflare Tunnel or ngrok)
-3. **App URL is displayed** in the terminal (e.g., `https://abc123.ngrok.io`)
+2. **Tunnel is created** automatically (using Cloudflare Tunnel)
+3. **App URL is displayed** in the terminal 
 4. **You'll be prompted** to:
    - Select or create an app in your Partner Dashboard
    - Choose a development store to install the app on
@@ -226,11 +169,6 @@ or
 ```
 Your app is running at: https://abc123.ngrok.io
 ```
-
-This is the URL you'll use for:
-- App Block settings during development
-- Updating your `.env` file (if running manually)
-- Configuring in Partner Dashboard
 
 ### 7. Install the App on Your Development Store
 
@@ -384,11 +322,10 @@ When ready to deploy:
    ```
 
 5. **Get your app URL** after deployment:
-   - **Quick method:** Check your hosting provider dashboard or Shopify Partner Dashboard → Apps → Your App → App setup → App URL
-
+   - **Quick method:** Check your hosting provider dashboard
+     
 6. **Update app URLs:**
    - Update `shopify.app.toml` with your production URL
-   - Update Shopify Partner Dashboard → Apps → Your App → App setup
    - Update the app block URL in `extensions/form-block/blocks/contact-form.liquid`
 
 ## Additional Resources
