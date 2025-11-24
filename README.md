@@ -308,3 +308,5 @@ When ready to deploy:
 - [Prisma Docs](https://www.prisma.io/docs)
 - [Shopify CLI Docs](https://shopify.dev/docs/apps/tools/cli)
 
+## Demo Video
+https://www.awesomescreenshot.com/video/46745460?key=ff326df70a4297449a24564cafad956e
